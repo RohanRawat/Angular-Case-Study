@@ -17,9 +17,9 @@ export class InputTimerComponent implements OnInit {
   setLogs:Logs[]= [];
   inputField = new FormControl(1000)
 
-  interval: any;
-  setTime :any;
-  pausingArray:Array<[]>= [];
+  interval:number|undefined;
+  setTime:number|undefined;
+  pausingArray:Array<string> = [];
   toggle :boolean = true;
   startCount:number = 0;
   pauseCount:number = 0
@@ -29,8 +29,9 @@ export class InputTimerComponent implements OnInit {
 
   }
 
-  startTimer(timerLeft:any){
-    let date = new Date()
+  startTimer(timer:string){
+    let date = new Date();
+    let timerLeft = Number(timer);
     let obj:Logs={
       status :'start',
       newDate:date
@@ -70,7 +71,7 @@ export class InputTimerComponent implements OnInit {
     
      this.toggle=true;
     if(this.setTime){
-      let pauseTiming  = this.setTime;
+      let pauseTiming  = String(this.setTime);
       this.pausingArray.push(pauseTiming);
     }
   }
