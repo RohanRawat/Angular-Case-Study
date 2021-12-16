@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  links = ['banner','products', 'table', 'dynamically-div'];
+  links = ['banner','products', 'table','countdown-timer', 'dynamically-div'];
   constructor() { }
 
   ngOnInit(): void {

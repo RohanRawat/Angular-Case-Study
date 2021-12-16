@@ -7,19 +7,19 @@ import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild, Vie
 })
 export class DynamicallyDivComponent implements OnInit {
 
-  @ViewChild('innerAppend', { static: true }) innerAppend!: ElementRef;
+  @ViewChild('innerElemnet', { static: true }) innerElemnet!: ElementRef;
 
   constructor(
    
   ) { }
 
   ngOnInit(): void {
-    this.createDynamicallyDiv(20);
+    this.createDynamicallyDiv(16);
   
   }
 
   ngAfterViewInit() {
-    this.innerAppend.nativeElement.addEventListener('click',this.listeningGlobalClick);
+    this.innerElemnet.nativeElement.addEventListener('click',this.listeningGlobalClick);
     //Scroll Event
     window.addEventListener('scroll', this.listeningWindowScroll);
   }
@@ -45,17 +45,17 @@ export class DynamicallyDivComponent implements OnInit {
       documentFragment.appendChild(creatDiv);
     }
   
-    this.innerAppend.nativeElement.appendChild(documentFragment);
+    this.innerElemnet.nativeElement.appendChild(documentFragment);
   }
 
   /**
    * @returns {LastElement Id}
    */
   private get getLastAppendChildrenId() {
-    const lastElement = this.innerAppend.nativeElement.lastChild;
+    const lastElement = this.innerElemnet.nativeElement.lastChild;
     if (!lastElement) {return 0;}
 
-    return this.innerAppend.nativeElement.lastChild.getAttribute('track-id');
+    return this.innerElemnet.nativeElement.lastChild.getAttribute('track-id');
   }
 
   /**
@@ -87,7 +87,7 @@ export class DynamicallyDivComponent implements OnInit {
    */
   private removeAllListener() {
     /**Element Click*/
-    this.innerAppend.nativeElement.removeEventListener('click', this.listeningGlobalClick);
+    this.innerElemnet.nativeElement.removeEventListener('click', this.listeningGlobalClick);
     /**Window Scroll */
     window.removeEventListener('scroll', this.listeningWindowScroll);
   }
