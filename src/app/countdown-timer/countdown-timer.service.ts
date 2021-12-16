@@ -1,5 +1,10 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
+
+interface Logs{
+  status:string,
+  newDate:Date
+}
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +13,7 @@ import { BehaviorSubject, Subject } from 'rxjs';
 export class CountdownTimerService {
 
   displayTimer = new BehaviorSubject<number>(0);
-  displayLogs = new BehaviorSubject<{}>([]);
+  displayLogs = new BehaviorSubject<Logs[]>([]);
   displayStartCount = new BehaviorSubject<number>(0);
   displayPauseCount = new BehaviorSubject<number>(0);
   constructor() { }
