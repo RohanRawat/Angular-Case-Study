@@ -1,0 +1,55 @@
+header {
+    background-color: rgb(226, 226, 223);
+    display: flex;
+    align-items: center; /* Vertical alignment */
+    font-family: "Raleway", sans-serif;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    z-index: 1;
+    height: 40px;
+  }
+
+  .fa-bars{
+    font-size: 2em
+  }
+  
+  header div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  header h2 {
+    font-weight: 900;
+    margin-left: 20px;
+    font-size: 2em;
+    font-family: "Raleway", sans-serif;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    font-family: "PT Sans Narrow", sans-serif;
+    font-weight: 900;
+    font-size: 1.2em;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: steelblue;
+  }
+  
+  // nav li:first-child {
+  //   border-bottom: 3px solid tomato;
+  // }
+  .active {
+    border-bottom: 3px solid tomato;
+  }
+  
+  nav li {
+    margin: 10px;
+    font-size: 1.2em;
+  }

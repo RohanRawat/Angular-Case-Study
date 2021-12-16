@@ -1,0 +1,29 @@
+.switch {
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid #747474;
+    button {
+      min-width: 40px;
+      height: 40px;
+      align-items: center;
+      display: flex;
+      border-radius: 0;
+      padding: 10px;
+      background: none;
+      svg {
+        width: 20px;
+        height: 20px;
+        fill: var(--black);
+      }
+    }
+    button:first-child {
+      border-right: 1px solid #747474;
+    }
+    //Run time class
+    .btn-n.active {
+      background-color: #edcf3b;
+    }
+  }
+  

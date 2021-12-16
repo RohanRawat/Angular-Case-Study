@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="container">
+        <div class="product-header">
+            <!--Products filters options--->
+            <div class="full dft">
+                <div class="product-title _u-flex1 ellip">Online Product Items</div>
+                <div class="_u-flex0 hide-sm">
+                    <app-grid-and-row-view-option (viewCallback)="productChildrenEvents($event)">
+                    </app-grid-and-row-view-option>
+                </div>
+                <div class="_u-flex0 product-filter">
+                    <app-select-options [options]="filterOptions" (selectCallback)="productChildrenEvents($event)">
+                    </app-select-options>
+                </div>
+            </div>
+        </div>
+        <div class="product-rendered clear">
+            <ng-container *ngFor="let product of products">
+                <div class="pro-item ui-sm-12" [ngClass]="{'ui-lg-3 ui-md-3 ': uiLayout==appEnum.GRID_VIEW, 'ui-lg-6 ui-md-6 ': uiLayout==appEnum.LIST_VIEW}">
+                    <app-product-rendered [product]="product"></app-product-rendered>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>

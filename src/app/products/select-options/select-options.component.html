@@ -1,0 +1,7 @@
+<div class="dft outer-menu-box">
+    <select id="select-menu" (change)="selectChangeEvent($event)">
+        <ng-container *ngFor="let option of options">
+            <option [value]="option.value">{{option.name}}</option>
+        </ng-container>
+    </select>
+</div>

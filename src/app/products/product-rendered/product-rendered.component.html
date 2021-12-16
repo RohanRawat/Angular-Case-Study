@@ -1,0 +1,22 @@
+
+<section [ngClass]="{'product-shimmer': !product}">
+    <div class="inner-list">
+        <div class="cover-view-product">
+            <!--PRODUCT PICTURE-->
+            <div class="pro-picture">
+                <img  class="shadow-img" [src]="product?.image" />
+            </div>
+            <!--PRODUCT DETAILS-->
+            <div class="pro-full-details">
+                <div class="pro-category-name ellip">{{product?.category}}</div>
+                <div class="pro-name ellip">{{product?.title}}</div>
+                <div class="pro-price-tags dft ellip">
+                    <span class="_u-flex1 prod-price">₹{{product?.price}}</span>
+                    <span class="_u-flex0 pro-rate">{{product?.rating?.rate}}</span>
+                </div>
+                <!--PRODUCT DISCOUNT-->
+                <div class="pro-dis">{{product?.rating?.count}} up to</div>
+            </div>
+        </div>
+    </div>
+</section>
